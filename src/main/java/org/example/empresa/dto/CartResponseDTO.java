@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Objects;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -15,7 +17,9 @@ public class CartResponseDTO extends CartRequestDTO {
     public Double processTotal() {
         total = 0.0;
         for (ProductDTO product : getProducts()) {
-            total += product.getPrice();
+            if (!Objects.isNull(product.getPrice())) {
+                total += product.getPrice();
+            }
         }
         return total;
     }

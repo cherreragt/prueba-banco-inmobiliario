@@ -6,6 +6,7 @@ import org.example.empresa.dto.LoginRequestDTO;
 import org.example.empresa.dto.LoginResponseDTO;
 import org.example.empresa.dto.RequestDTO;
 import org.example.empresa.exception.UnauthorizedException;
+import org.example.empresa.interfaces.IAuthService;
 import org.example.empresa.repository.HttpRequest;
 import org.example.empresa.utils.Validator;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,7 +18,7 @@ import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
-public class AuthService {
+public class AuthService implements IAuthService {
     private final HttpRequest<LoginResponseDTO> httpRequest;
 
     @Value("${auth.host}")

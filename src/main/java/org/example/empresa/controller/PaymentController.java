@@ -4,7 +4,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.empresa.dto.PaymentRequestDTO;
 import org.example.empresa.dto.PaymentResponseDTO;
-import org.example.empresa.service.PaymentService;
+import org.example.empresa.interfaces.IPaymentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/payment")
 @RequiredArgsConstructor
 public class PaymentController {
-    private final PaymentService paymentService;
+    private final IPaymentService paymentService;
 
     @PostMapping
     public ResponseEntity<PaymentResponseDTO> processPayment(@Valid @RequestBody PaymentRequestDTO request, BindingResult result) {

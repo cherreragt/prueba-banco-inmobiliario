@@ -3,6 +3,7 @@ package org.example.empresa.service;
 import org.example.empresa.dto.PaymentRequestDTO;
 import org.example.empresa.dto.PaymentResponseDTO;
 import org.example.empresa.exception.BadRequestException;
+import org.example.empresa.interfaces.IPaymentService;
 import org.example.empresa.utils.Validator;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
@@ -11,7 +12,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Service
-public class PaymentService {
+public class PaymentService implements IPaymentService {
     public PaymentResponseDTO processPayment(PaymentRequestDTO request, BindingResult result) {
         Validator.validate(result);
 
