@@ -15,11 +15,11 @@ public class ProductDTO {
     @NotNull(message = "id is required")
     private Long id;
 
-    @NotBlank(message = "title is required")
-    @NotNull(message = "title is required")
+    /*@NotBlank(message = "title is required")
+    @NotNull(message = "title is required")*/
     private String title;
 
-    @NotNull(message = "price is required")
+    // @NotNull(message = "price is required")
     private Double price;
 
     @NotNull(message = "description is required")

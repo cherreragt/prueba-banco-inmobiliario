@@ -18,11 +18,11 @@ import java.util.List;
 public class CartDTO {
     @NotNull(message = "id is required")
     private Long id;
-    @NotNull(message = "userId is required")
+    /*@NotNull(message = "userId is required") // se remueve para clase de QA*/
     private Long userId;
     private Date date;
-    @NotNull(message = "products is required")
-    @NotEmpty(message = "products are required")
+    /*@NotNull(message = "products is required") // se remueve para clase de QA
+    @NotEmpty(message = "products are required")*/
     private List<OrderDTO> products;
     @JsonIgnore
     private Integer __v;

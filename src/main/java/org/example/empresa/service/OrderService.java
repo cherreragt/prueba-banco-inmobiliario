@@ -12,6 +12,7 @@ import org.example.empresa.dto.CartResponseDTO;
 import org.example.empresa.dto.RequestDTO;
 import org.example.empresa.exception.BadRequestException;
 import org.example.empresa.interfaces.IOrderService;
+import org.example.empresa.interfaces.IProductService;
 import org.example.empresa.repository.HttpRequest;
 import org.example.empresa.utils.Validator;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,7 +27,7 @@ import java.util.Objects;
 @Service
 @RequiredArgsConstructor
 public class OrderService implements IOrderService {
-    private final ProductService productService;
+    private final IProductService productService;
     private final HttpRequest<Object> httpRequest;
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final Map<String, String> headers = Map.of("Content-Type", "application/json");
@@ -89,6 +90,7 @@ public class OrderService implements IOrderService {
                     throw new BadRequestException(violations.stream().toList().get(0).getMessage());
                 }
             }
+
 
             var product = productService.getProduct(productDTO.getProductId());
             if (Objects.isNull(product) || Objects.isNull(product.getId())) {

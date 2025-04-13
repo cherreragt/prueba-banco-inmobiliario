@@ -15,7 +15,7 @@ public class LoginRequestDTO {
     @NotBlank(message = "username is required")
     private String username;
 
-    @NotBlank(message = "password is required")
-    @NotBlank(message = "password is required")
+    /*@NotBlank(message = "password is required") // Se remueven para dar la clase de QA
+    @NotBlank(message = "password is required")*/
     private String password;
 }

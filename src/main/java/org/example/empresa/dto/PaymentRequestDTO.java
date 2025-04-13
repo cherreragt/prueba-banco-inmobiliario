@@ -24,8 +24,8 @@ public class PaymentRequestDTO {
     @NotEmpty(message = "Nombre del titular no puede ser vacío")
     private String cardHolder;
 
-    @NotNull(message = "Fecha de expiración no puede ser nulo")
-    @NotEmpty(message = "Fecha de expiración no puede ser vacío")
+    /*@NotNull(message = "Fecha de expiración no puede ser nulo")
+    @NotEmpty(message = "Fecha de expiración no puede ser vacío")*/
     private String expirationDate;
 
     @NotNull(message = "CVV no puede ser nulo")
@@ -36,6 +36,6 @@ public class PaymentRequestDTO {
     @NotNull(message = "Monto no puede ser nulo")
     private BigDecimal amount;
 
-    @NotNull(message = "ID de la orden no puede ser nulo")
+    /*@NotNull(message = "ID de la orden no puede ser nulo")*/
     private Long orderId;
 }
