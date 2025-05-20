@@ -1,9 +1,6 @@
 package org.example.empresa.dto;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,8 +21,9 @@ public class PaymentRequestDTO {
     @NotEmpty(message = "Nombre del titular no puede ser vacío")
     private String cardHolder;
 
-    /*@NotNull(message = "Fecha de expiración no puede ser nulo")
-    @NotEmpty(message = "Fecha de expiración no puede ser vacío")*/
+    @NotNull(message = "Fecha de expiración no puede ser nulo")
+    @NotEmpty(message = "Fecha de expiración no puede ser vacío")
+    @Pattern(regexp = "^(0[1-9]|1[0-2])/[0-9]{2}$", message = "Formato de fecha inválido. Debe ser MM/AA")
     private String expirationDate;
 
     @NotNull(message = "CVV no puede ser nulo")

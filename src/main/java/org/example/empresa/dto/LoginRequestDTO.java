@@ -11,8 +11,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoginRequestDTO {
-    @NotBlank(message = "username is required")
-    @NotBlank(message = "username is required")
+    /*@NotBlank(message = "username is required")
+    @NotBlank(message = "username is required")*/ // Se remueven para dar la clase de QA
     private String username;
 
     /*@NotBlank(message = "password is required") // Se remueven para dar la clase de QA

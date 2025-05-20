@@ -47,7 +47,8 @@ public class ProductService implements IProductService {
             throw new ErrorInternalException(ERROR_ON_REQUEST);
         }
 
-        return objectMapper.convertValue(response.getBody(), ProductDTO.class);
+        // return objectMapper.convertValue(response.getBody(), ProductDTO.class);
+        return new ProductDTO();
     }
 
     @Override
@@ -99,7 +100,10 @@ public class ProductService implements IProductService {
             throw new ErrorInternalException(ERROR_ON_REQUEST);
         }
 
-        return objectMapper.convertValue(response.getBody(), ProductDTO.class);
+        var product = objectMapper.convertValue(response.getBody(), ProductDTO.class);
+        //product.setTitle("");
+
+        return product;
     }
 
     @Override

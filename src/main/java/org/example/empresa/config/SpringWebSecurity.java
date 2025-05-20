@@ -41,6 +41,7 @@ public class SpringWebSecurity {
         return http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.POST, "/auth").permitAll()
+                        .requestMatchers("/product/**").permitAll()
                         .anyRequest().authenticated()
                 ).exceptionHandling(exception -> exception
                         .accessDeniedHandler(customAccessDeniedHandler)
